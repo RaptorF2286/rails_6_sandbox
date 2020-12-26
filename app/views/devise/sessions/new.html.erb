@@ -1,0 +1,24 @@
+<section>
+  <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-large">
+    <h1>Iniciar sesión</h1>
+    <p>Ingresa tus credenciales para iniciar sesión</p>
+    <hr>
+    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= f.input :email %>
+      <%= f.input :password %>
+
+      <% if devise_mapping.rememberable? %>
+        <%= f.input :remember_me, as: :boolean %>
+      <% end %>
+
+      <%= 
+        f.submit 'Iniciar sesión', 
+        class: 'uk-button uk-button-default', 
+        data: {
+          'disable-with': '<span uk-icon="icon: check"></span>'
+        } 
+      %>
+    <% end %>
+  </div>
+  <%= render "devise/shared/links" %>
+</section>

@@ -6,10 +6,11 @@
     <%= csp_meta_tag %>
     <%= action_cable_meta_tag %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'scripts', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body class="uk-flex uk-flex-center uk-flex-middle">
+    <%= render 'layouts/flash-messages' %>
     <%= yield %>
   </body>
 </html>

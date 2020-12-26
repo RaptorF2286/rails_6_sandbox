@@ -1,0 +1,28 @@
+<% if flash.any? or notice or alert %>
+  <div class="uk-position-bottom">
+    <div class="uk-container">
+      <% if flash.any? and (not notice and not alert) %>
+        <% flash.each do |key, value| %>
+          <div class="uk-alert-<%= key %> uk-animation-slide-bottom" uk-alert>
+            <a class="uk-alert-close" uk-close></a>
+            <p class="uk-text-lead uk-margin-remove-bottom"><%= value %></p>
+          </div>
+        <% end %>
+      <% end %>
+
+      <% if notice %>
+        <div class="uk-alert-success uk-animation-slide-bottom" uk-alert>
+          <a class="uk-alert-close" uk-close></a>
+          <p class="uk-text-lead uk-margin-remove-bottom"><%= notice %></p>
+        </div>
+      <% end %>
+
+      <% if alert %>
+        <div class="uk-alert-danger uk-animation-slide-bottom" uk-alert>
+          <a class="uk-alert-close" uk-close></a>
+          <p class="uk-text-lead uk-margin-remove-bottom"><%= alert %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

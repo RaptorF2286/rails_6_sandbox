@@ -1,5 +1,5 @@
 import { Controller } from 'stimulus'
-import StimulusReflex from 'stimulus_reflex'
+# import StimulusReflex from 'stimulus_reflex'
 
 # This is your ApplicationController.
  # All StimulusReflex controllers should inherit from this class.
@@ -12,8 +12,10 @@ import StimulusReflex from 'stimulus_reflex'
  #
  # Learn more at: https://docs.stimulusreflex.com
  #
-export default class extends Controller {
-  connect: -> StimulusReflex.register(this)
+export default class extends Controller 
+  connect: ->
+    console.log 'Sisas'
+    # StimulusReflex.register(this)
 
   # Application-wide lifecycle methods
   # Use these methods to handle lifecycle concerns for the entire application.
@@ -31,13 +33,15 @@ export default class extends Controller {
   #   reflexId - a UUID4 or developer-provided unique identifier for each Reflex
   
 
-  beforeReflex: (element, reflex, noop, reflexId) -> document.body.classList.add('wait')
-  reflexSuccess: (element, reflex, noop, reflexId) -> console.log 'reflexSuccess'
-  reflexError: (element, reflex, error, reflexId) -> console.log 'reflexError'
-  afterReflex: (element, reflex, noop, reflexId) -> console.log 'afterReflex'
-  beforeReflex: -> @benchmark = performance.now()
-  
-  afterReflex: (element, reflex) ->
-    console.log(reflex, `${(performance.now() - this.benchmark).toFixed(0)}ms`)
-  
-
+  # beforeReflex: (element, reflex, noop, reflexId) ->
+  #   document.body.classList.add('wait')
+  # reflexSuccess: (element, reflex, noop, reflexId) ->
+  #   console.log 'reflexSuccess'
+  # reflexError: (element, reflex, error, reflexId) -> 
+  #   console.log 'reflexError'
+  # afterReflex: (element, reflex, noop, reflexId) -> 
+  #   console.log 'afterReflex'
+  # beforeReflex: -> 
+  #   @benchmark = performance.now()
+  # afterReflex: (element, reflex) ->
+  #   console.log(reflex, `${(performance.now() - this.benchmark).toFixed(0)}ms`)

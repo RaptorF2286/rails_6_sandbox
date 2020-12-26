@@ -18,7 +18,7 @@ export default class ExampleController extends ApplicationController
 
   connect: ->
     console.log 'Inició'
-    super.connect()
+    # super.connect()
     # add your code here, if applicable
   
 
@@ -51,17 +51,16 @@ export default class ExampleController extends ApplicationController
   # Assuming you create a "Example#dance" action in your Reflex class
   # you'll be able to use the following lifecycle methods:
 
-  dance: -> console.log 'Bailelo'
-  beforeDance: (element, reflex, noop, reflexId) ->
-   element.innerText = 'Putting dance shoes on...'
+  dance: (eve) -> 
+    eve.preventDefault()
+    console.log 'Bailelo'
+  # beforeDance: (element, reflex, noop, reflexId) ->
+  #  element.innerText = 'Putting dance shoes on...'
   
 
-  danceSuccess: (element, reflex, noop, reflexId) ->
-    element.innerText = 'Danced like no one was watching! Was someone watching?'
+  # danceSuccess: (element, reflex, noop, reflexId) ->
+  #   element.innerText = 'Danced like no one was watching! Was someone watching?'
   
-
-  danceError: (element, reflex, error, reflexId) ->
-    console.error('danceError', error)
-    element.innerText = "Couldn't dance!"
-  
-
+  # danceError: (element, reflex, error, reflexId) ->
+  #   console.error('danceError', error)
+  #   element.innerText = "Couldn't dance!"

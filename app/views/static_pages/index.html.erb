@@ -2,7 +2,10 @@
   <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-large">
     <h1>StaticPages#index</h1>
     <p>Find me in app/views/static_pages/index.html.erb</p>
-    <a href="#" data-reflex="click->Example#dance" data-controller="example">Dance!</a>
+    <div data-controller="example">
+      <a href="#" data-action="example#dance">Dance!</a>
+      <%# <a href="#" data-reflex="click->Example#dance" data-controller="example" data-action>Dance!</a> %>
+    </div>
 
     <hr>
 
