@@ -4,6 +4,9 @@ import ApplicationController from './application_controller'
  # Learn more at: https://docs.stimulusreflex.com
  #
 export default class ExampleController extends ApplicationController
+  increment: (eve) ->
+    eve.preventDefault()
+    @stimulate 'Example#increment', 1
   #
    # Regular Stimulus lifecycle methods
    # Learn more at: https://stimulusjs.org/reference/lifecycle-callbacks
@@ -16,9 +19,7 @@ export default class ExampleController extends ApplicationController
    # call super if you intend to do anything else when this controller connects.
   #
 
-  connect: ->
-    console.log 'Inició'
-    # super.connect()
+  #   console.log 'Inició'
     # add your code here, if applicable
   
 
@@ -51,9 +52,6 @@ export default class ExampleController extends ApplicationController
   # Assuming you create a "Example#dance" action in your Reflex class
   # you'll be able to use the following lifecycle methods:
 
-  dance: (eve) -> 
-    eve.preventDefault()
-    console.log 'Bailelo'
   # beforeDance: (element, reflex, noop, reflexId) ->
   #  element.innerText = 'Putting dance shoes on...'
   

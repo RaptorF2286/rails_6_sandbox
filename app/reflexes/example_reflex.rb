@@ -22,4 +22,7 @@ class ExampleReflex < ApplicationReflex
   #
   # Learn more at: https://docs.stimulusreflex.com
 
+  def increment 
+    @count = element.dataset[:count].to_i + element.dataset[:step].to_i
+  end
 end
