@@ -1,0 +1,9 @@
+<%= simple_form_for(category) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <%= f.input :name %>
+  <%= f.input :er %>
+
+  <%= f.button :submit, class: 'uk-button uk-button-default' %>
+<% end %>

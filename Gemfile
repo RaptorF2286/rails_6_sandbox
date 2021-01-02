@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
-gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
+gem 'rails', '~> 6.1.0'
 
 gem 'sqlite3', '~> 1.4'
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -39,5 +39,4 @@ group :test do
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
 gem "stimulus_reflex", "~> 3.3"

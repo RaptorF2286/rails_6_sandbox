@@ -1,0 +1,32 @@
+<section class="uk-container">
+  <div class="uk-card uk-card-default uk-card-hover uk-card-body">
+    <h1>Categories</h1>
+    <%= link_to 'New Category', new_category_path %>
+    <br>
+
+    <div class="uk-overflow-auto">
+      <table class="uk-table uk-table-hover uk-table-middle uk-table-divider">
+        <thead>
+          <tr>
+              <th class="uk-table-shrink"></th>
+              <th class="uk-table-shrink">Nombre</th>
+              <th class="uk-table-expand">Er</th>
+              <th class="uk-table-expand">Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+            <tr>
+              <td><input class="uk-checkbox" type="checkbox"></td>
+              <td><%= category.name %></td>
+              <td><%= category.er %></td>
+              <td><%= link_to 'Show', category %></td>
+              <td><%= link_to 'Edit', edit_category_path(category) %></td>
+              <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,8 @@
 <section>
   <div class="uk-card uk-card-default uk-card-hover uk-card-body uk-width-large">
     <h1>Editando <%= singular_table_name.titleize %></h1>
+    <%%= link_to 'Volver', <%= index_helper %>_path, class: "uk-button uk-button-default" %>
+
     <hr>
     <%%= render 'form', <%= singular_table_name %>: @<%= singular_table_name %> %>
   </div>
